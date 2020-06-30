@@ -2,7 +2,7 @@ body {
   background-color: rgb(6, 9, 22);
   color: white;
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   letter-spacing: 2px;
   cursor: context-menu;
 }
