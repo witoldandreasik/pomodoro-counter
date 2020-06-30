@@ -18,12 +18,13 @@ const PomodoroTimer = () => {
   let bValue = breakValue.textContent;
   resetTime = () => {
     seconds = 0;
-    minutes = sessionValue.textContent;
-    timer.textContent = `${sValue}:00`;
+    minutes = sessionTime ? sessionValue.textContent : breakValue.textContent;
+    timer.textContent = sessionTime ? `${sValue}:00` : `${bValue}:00`;
     counter.classList.remove("paused");
     counter.classList.remove("active");
     counter.classList.add("restarted");
     btn.textContent = "START";
+
     clearInterval(counterOn);
   };
 

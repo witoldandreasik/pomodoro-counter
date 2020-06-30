@@ -14,7 +14,7 @@ h1 {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin: 5vh auto 10vh;
+  margin: 3vh auto 10vh;
 }
 
 .session,
@@ -53,7 +53,7 @@ h1 {
 }
 .restart {
   padding-top: 20px;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   transform: scale(1);
   transition: 0.2s ease-in-out;
@@ -109,7 +109,7 @@ div.counter.paused {
   color: white;
   font-size: 20px;
   outline: none;
-  opacity: 0;
+  opacity: 1;
   transition: 0.4s;
   cursor: pointer;
 }
@@ -141,5 +141,10 @@ div.counter.paused {
 
   .counter {
     padding: 60px 50px 60px;
+  }
+  .action,
+  .action:hover,
+  .action:focus {
+    opacity: 0;
   }
 }
