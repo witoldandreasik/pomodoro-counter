@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro App</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Ucz się metodą Pomodoro</h1>
+
+    <div class="controller">
+      <div class="session" id="session">
+        <h2 class="controller-header">Długość nauki</h2>
+        <p>
+          <em class="fas fa-arrow-left" id="time-less"></em>
+          <span id="session-time">25</span>
+          <em class="fas fa-arrow-right" id="time-more"></em>
+        </p>
+      </div>
+
+      <div class="break" id="break">
+        <h2 class="controller-header">Długość przerwy</h2>
+        <p>
+          <em class="fas fa-arrow-left" id="break-less"></em>
+          <span id="break-time">15</span>
+          <em class="fas fa-arrow-right" id="break-more"></em>
+        </p>
+      </div>
+    </div>
+
+    <div class="counter" id="counter">
+      <h2 class="counter-status" id="counter-status">Nauka</h2>
+      <p class="timer" id="timer">
+        25:00
+      </p>
+      <button class="action" id="btn">START</button>
+    </div>
+    <em class="fas fa-sync restart" id="restart"></em>
+
+    <script src="counter.js"></script>
+  </body>
+</html>

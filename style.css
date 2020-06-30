@@ -1,0 +1,138 @@
+body {
+  background-color: rgb(6, 9, 22);
+  color: white;
+  text-align: center;
+  font-family: "Roboto";
+  letter-spacing: 2px;
+  cursor: context-menu;
+}
+h1 {
+  font-size: 20px;
+}
+.controller {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 5vh auto 10vh;
+}
+
+.session,
+.break {
+  width: 100px;
+  height: 100px;
+  line-height: 12px;
+  border: 1px solid tomato;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 20px;
+  box-shadow: 0 0 1px 1px tomato;
+}
+
+.controller-header {
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.controller em {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.counter {
+  position: relative;
+  max-width: 250px;
+  line-height: 40px;
+  margin: 0 auto;
+  border: 2px solid dodgerblue;
+  border-radius: 50%;
+  padding: 10px 20px 60px;
+  transition: 0.3s;
+}
+.restart {
+  padding-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.2s ease-in-out;
+}
+.restart:hover {
+  transform: scale(1.1);
+}
+.counter.active {
+  border-color: green;
+  box-shadow: 0 0 2px 2px green;
+}
+.counter.active:hover {
+  box-shadow: 0 0 4px 4px green;
+}
+
+div.counter.paused {
+  border-color: orange;
+  box-shadow: 0 0 2px 2px orange;
+}
+.counter.paused:hover {
+  box-shadow: 0 0 4px 4px orange;
+}
+
+.counter-status {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.timer {
+  font-size: 60px;
+}
+
+.action,
+.action:hover,
+.action:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50%;
+  padding: 70% 0 10% 0;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  outline: none;
+  opacity: 0;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.counter:hover .action {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  .session,
+  .break {
+    line-height: 20px;
+    padding: 26px 21px;
+    font-size: 20px;
+  }
+
+  .controller {
+    justify-content: space-around;
+    margin: 10vh auto;
+  }
+
+  .controls-header {
+    font-size: 17px;
+  }
+
+  .counter {
+    padding: 60px 50px 60px;
+  }
+}
