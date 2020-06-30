@@ -12,9 +12,19 @@ const PomodoroTimer = () => {
   let minutes = sessionValue.textContent;
   let sessionTime = true;
   let counterOn = false;
-
-  restartTimer = () => {
-    timer.textContent = `${sessionValue.textContent}:00`;
+  let oldSessionValue = sessionValue.textContent;
+  let oldBreakValue = breakValue.textContent;
+  let sValue = sessionValue.textContent;
+  let bValue = breakValue.textContent;
+  resetTime = () => {
+    seconds = 0;
+    minutes = sessionValue.textContent;
+    timer.textContent = `${sValue}:00`;
+    counter.classList.remove("paused");
+    counter.classList.remove("active");
+    counter.classList.add("restarted");
+    btn.textContent = "START";
+    clearInterval(counterOn);
   };
 
   changeStatus = () => {
@@ -23,10 +33,13 @@ const PomodoroTimer = () => {
     if (counter.classList.contains("active")) {
       action = counter.classList.contains("paused") ? "ZATRZYMAJ" : "WZNÓW";
       counter.classList.toggle("paused");
+      counter.classList.remove("restarted");
     } else {
       counter.classList.add("active");
+      counter.classList.remove("restarted");
       action = "ZATRZYMAJ";
     }
+
     setTimeout(() => {
       btn.textContent = action;
     }, 100);
@@ -35,8 +48,6 @@ const PomodoroTimer = () => {
 
   changeTime = (e) => {
     let elId = e.target.id;
-    let sValue = sessionValue.textContent;
-    let bValue = breakValue.textContent;
 
     clearInterval(counterOn);
 
@@ -67,7 +78,6 @@ const PomodoroTimer = () => {
       seconds >= 10 ? seconds : "0" + seconds
     }`;
   };
-
   count = () => {
     if (minutes > 0 || (minutes === 0 && seconds > 0)) {
       if (seconds > 0) {
@@ -98,13 +108,11 @@ const PomodoroTimer = () => {
       clearInterval(counterOn);
     }
   };
-
   btn.addEventListener("click", changeStatus);
   for (let arrow of arrows) {
     arrow.addEventListener("click", changeTime);
   }
-
-  restart.addEventListener("click", restartTimer);
+  restart.addEventListener("click", resetTime);
 };
 
 PomodoroTimer();

@@ -7,7 +7,7 @@ body {
   cursor: context-menu;
 }
 h1 {
-  font-size: 22px;
+  font-size: 20px;
 }
 .controller {
   display: flex;
@@ -61,7 +61,14 @@ h1 {
 .restart:hover {
   transform: scale(1.1);
 }
-.counter.active {
+.counter.restarted {
+  border: 2px solid red;
+  box-shadow: 0 0 0 0 red;
+}
+.counter.restarted:hover {
+  box-shadow: 0 0 2px 2px red;
+}
+div.counter.active {
   border-color: green;
   box-shadow: 0 0 2px 2px green;
 }
